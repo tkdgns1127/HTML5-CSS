@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text" name="id" pattern="abc" title="abc 말고 입력 불허" placeholder="무조건 abc 입력" required><br>
+        <input type="text" name="a1" pattern="^a[a-z]{0,}" title="a로 시작" placeholder="a로 시작" required><br>
+        <input type="text" name="a2" pattern="[0-9]{3,}" title="숫자 3개 이상" placeholder="숫자 3개 이상" required><br>
+        <input type="text" name="a3" pattern="[0-9a-zA-Z가-힣]{0,}" title="특수문자 제외" placeholder="특수문자 제외" required>
+        <input type="text" name="a4" pattern="[가-힣]{2,}" title="이름 두자 이상">
+        <button type="submit">등록</button>
+    </form>
+</body>
+</html>

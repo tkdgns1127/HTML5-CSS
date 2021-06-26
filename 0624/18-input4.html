@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            background-color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get">
+        <h1>1. 다음 중 우리나라의 국화는</h1>
+        <ul>
+            <li><label>무궁화<input type="radio" name="ans" class="ans" value="1" checked></label></li>
+            <li><label>민들레<input type="radio" name="ans" class="ans" value="2"></label></li>
+            <li><label>장미<input type="radio" name="ans" class="ans" value="3"></label></li>
+            <li><label>안개꽃<input type="radio" name="ans" class="ans" value="4"></label></li>
+        </ul>
+        <h1>2. 컴퓨터 언어의 종류가 아닌것은</h1>
+        <ul>
+            <li><label>C<input type="checkbox" name="cbox" id="cbox" value="a"></label></li>
+            <li><label>JSON<input type="checkbox" name="cbox" id="cbox" value="b" checked></label></li>
+            <li><label>Java<input type="checkbox" name="cbox" id="cbox" value="c"></label></li>
+            <li><label>JavaScript<input type="checkbox" name="cbox" id="cbox" value="d"></label></li>
+            <li><label>Spring<input type="checkbox" name="cbox" id="cbox" value="e"></label></li>
+        </ul>
+        <ul>
+            <li><input type="color" name="color" id="color"></li>
+        </ul>
+        <ul>
+            <li><button type="submit">전송</button></li>
+        </ul>
+    </form>
+    <script>
+       document.getElementById("cbox").parentElement.style.color = "blue"; 
+    </script>
+</body>
+</html>
