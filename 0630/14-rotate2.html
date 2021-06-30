@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .orgin{
+            width:210px;
+            height: 200px;
+            border: 1px solid black;
+            float: left;
+            margin: 56px;
+            perspective: 200px;
+        }
+        .rotatex{
+            transform: rotateX(45deg);
+        }
+        .rotatey{
+            transform: rotateY(45deg);
+        }
+        .rotatez{
+            transform: rotateZ(45deg);
+        }
+        .rotate3d{
+            transform: rotate3d(2.5, 2.1, -1.5, 45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="orgin">
+        <div class="rotatex"><img src="img/fruit.jpg" alt=""></div>
+    </div>
+    <div class="orgin">
+        <div class="rotatey"><img src="img/fruit.jpg" alt=""></div>
+    </div>
+    <div class="orgin">
+        <div class="rotatez"><img src="img/fruit.jpg" alt=""></div>
+    </div>
+    <div class="orgin">
+        <div class="rotate3d"><img src="img/fruit.jpg" alt=""></div>
+    </div>
+</body>
+</html>

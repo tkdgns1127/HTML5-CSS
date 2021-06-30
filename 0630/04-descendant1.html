@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .st1 li{
+            /* border : 1px solid blue; */
+        }
+        .st1 > li{
+            border : 1px solid blue;
+        }
+        .sb1+li{
+            /* background-color: yellow; */
+        }
+        .sb1 ~ li{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="st1">
+        <li>A</li>
+        <li>B</li>
+        <li>C
+            <ul>
+                <li>1</li>
+                <li class="sb1">2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </li>
+        <li>D</li>
+    </ul>
+    <ul>
+        <li>E</li>
+        <li>F</li>
+        <li>G</li>
+        <li>H</li>
+        <li>I</li>
+    </ul>
+</body>
+
+</html>

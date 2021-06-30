@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .origin{
+            width: 200px;
+            height: 134px;
+            border: 1px solid black;
+            float: left;
+            margin: 40px;
+
+        }
+        .movex:hover{
+            transform: translateX(50px);
+        }
+        .movey:hover{
+            transform: translateY(50px);
+        }
+        .movexy:hover{
+            transform: translate(50px, 50px);
+        }
+        /* 3d지원을 하기 위해서 perspective()함수 무조건 사용!! */
+        /* perspective() 함수를 사용해야지 Z값 사용 가능 */
+        .movez:hover{
+            transform: perspective(500px) translateZ(-50px);
+        }
+        .move3d:hover{
+            transform: perspective(500px) translate3d(20px, 30px, 80px)
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="movex"><img src="img/bus.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="movey"><img src="img/bus.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="movexy"><img src="img/bus.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="movez"><img src="img/bus.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="move3d"><img src="img/bus.jpg" alt=""></div>
+    </div>
+</body>
+</html>

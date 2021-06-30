@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input:focus{
+            background-color: springgreen;
+        }
+        #btn{
+            background-color: thistle;
+        }
+        #btn:hover{
+            color: red;
+        }
+        #btn:active{
+            background-color: turquoise;
+        }
+        #div{
+            width: 100px;
+            height: 100px;
+            background-color: steelblue;
+        }
+        #div:active{
+            background-color: turquoise;
+        }
+        /* :enabled : 사용 가능 */
+        .enable:enabled{
+            background-color: yellowgreen;
+        }
+        /* :disabled : 사용 불가능 */
+        .enable:disabled{
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="input">
+    <button id="btn">버튼</button>
+    <div id="div"></div>
+    <input type="text" class="enable">
+</body>
+</html>

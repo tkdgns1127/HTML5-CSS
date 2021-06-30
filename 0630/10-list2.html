@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.navi li{
+            list-style-type: none;
+            display: block;
+            width: 8em;
+            height: 3em;
+            float: left;
+            text-align: center;
+            border: 1px solid #818181;
+            box-shadow: 1px 1px 1px#bbbbbb;
+
+        }
+
+        ul.navi li a{
+            display: block;
+            padding: 0.8em 0.5em 0.5em 0.5em;
+            text-decoration: none;
+            color: #292929;
+            text-shadow: 1px 1px 0px #ccc;
+
+        }
+        ul.navi li:hover{
+            background-color: #333333;
+        }
+        ul.navi li:hover > a{
+            color: rgba(245, 245, 245, 0.884);
+            text-shadow: 0px 1px 0px #fff;
+        }
+        ul.navi li:first-child{
+            border-top-left-radius: 1em;
+            border-bottom-left-radius: 1em;
+        }
+        ul.navi li:last-child{
+            border-top-right-radius: 1em;
+            border-bottom-right-radius: 1em;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navi">
+        <li class="home"><a href="#">HOME</a></li>
+        <li class="html5"><a href="#">HTML5</a></li>
+        <li class="css"><a href="#">CSS3</a></li>
+        <li class="jquery"><a href="#">JQUERY</a></li>
+    </ul>
+</body>
+</html>
