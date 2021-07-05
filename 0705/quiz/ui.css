@@ -1,0 +1,35 @@
+.page{
+    display: grid;
+}
+
+.menu{
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
+    grid-template-rows: 40px;
+    align-items: center;
+    padding :10px;
+}
+
+.menu-list{
+    list-style: none;
+    margin-left: 20px;
+}
+
+.menu-link{
+    text-decoration: none;
+    color: white;
+}
+
+.main{
+    display: grid;
+}
+
+.main>section>div{
+    width: 100vw;
+    height: 40vh;
+    background: url("images/header.jpg") no-repeat cover;
+}
+
+
+
