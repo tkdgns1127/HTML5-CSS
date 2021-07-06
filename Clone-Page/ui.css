@@ -1,0 +1,52 @@
+header{
+    color: #fff;
+    /* font 수정하기 */
+    font-family: sans-serif;
+}
+
+.menu-bar{
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    background-color: black;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.menu-bar h1{
+    margin-left: 50px;
+    font-size: 2em;
+    font-family: cursive;
+    flex :2
+}
+
+.menu-bar ul{
+    display : flex;
+    flex : 8;
+    justify-content: center;
+}
+.menu-bar ul li{
+    list-style: none;
+    padding : 10px;
+
+}
+
+.menu-link{
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-bar .btn{
+    flex : 2;
+
+}
+
+.menu-bar .btn button{
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: black;
+    padding: 10px;
+    margin-left: 50px;
+ 
+    
+}
