@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><input type="text" id="input1" class="ul1"></li>
+        <li><input type="text" id="input2" class="ul1"></li>
+        <li><input type="text" id="input3" class="ul1"></li>
+        <li><input type="text" id="input4" class="ul1"></li>
+        <li><input type="text" id="input5" class="ul1"></li>
+        <li><input type="text" id="input6" class="ul1"></li>
+    </ul>
+
+    <ul>
+        <li><input type="text" class="ul2"></li>
+        <li><input type="text" class="ul2"></li>
+        <li><input type="text" class="ul2"></li>
+    </ul>
+
+    <ul>
+        <li><input type="checkbox" name="ul3" id="" value="1"></li>
+        <li><input type="checkbox" name="ul3" id="" value="2"></li>
+        <li><input type="checkbox" name="ul3" id=""  value="3"></li>
+    </ul>
+    <script>
+        document.getElementsByTagName("input")[0].value="안녕하세요";
+        // let input3 = document.getElementsByName("input")[2].value;
+        console.log(input3);
+        document.getElementsByTagName("input")[6].value="안녕하세요";
+        document.getElementsByTagName("input")[6].value = "6번째 인풋";
+
+        document.getElementsByClassName("ul1")[3].value = "38기";
+
+        let check2 = document.getElementsByName("ul3")[1].value;
+        console.log(check2);
+
+        let check3 = (document.getElementsByName("ul3")[2].checked)?document.getElementsByName("ul3")[2].value:"none";
+        console.log(check3);
+
+        document.getElementById("input6").value = "내일은 모두 비대면"
+
+        document.querySelector("#input1").value = "querySelector로 접근한 문장";
+
+        document.querySelectorAll(".ul1")[4].value = "querySelectorAll로 접근"
+    </script>
+</body>
+</html>
