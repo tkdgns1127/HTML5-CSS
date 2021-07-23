@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><label>반복할 횟수 지정 : <input type="text" id="num"></label></li>
+        <li><button id="btn">실행</button></li>
+    </ul>
+    <script>
+        document.querySelector("#btn").addEventListener("click",function(){
+            let val1 = Number(document.querySelector("#num").value);
+            let count = 0;
+            
+            // while(count < val1){
+            //     count++;
+            //     if(count === 3)continue;
+            //     console.log(`현재 카운트 값은 ${count} 입니다`);
+            // }
+
+            // do{
+            //     count++;
+            //     if(count === 3)continue;
+            //     console.log(`현재 카운트 값은 ${count} 입니다`);
+            // }while(count < val1)
+            
+            while(count < val1){
+                count++;
+                if(count === 3)break;
+                console.log(`현재 카운트 값은 ${count} 입니다`);
+            }
+
+            console.log("끝");
+        });
+    </script>
+</body>
+</html>

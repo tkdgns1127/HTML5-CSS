@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        #menu1{
+            display : none;
+        } 
+
+        .point {
+            cursor: pointer;
+        }
+
+        #head {
+            display: grid;
+
+
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .hh {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .head1 img {
+            margin-right: 10px;
+        }
+
+        .head1 img:last-child {
+            margin-left: 10px;
+        }
+
+        .head3 #button {
+            display: none;
+        }
+
+        .hh-ul {
+            display: flex;
+        }
+
+        .hh-list {
+            list-style-type: none;
+            border-right: 1px solid black;
+            padding: 0px 20px;
+            font-weight: lighter;
+            font-size: 0.8em;
+            color: black;
+        }
+
+        .hh-list:last-child {
+            border: 0px;
+        }
+
+
+        .menu {
+            width: 100vw;
+            display: grid;
+            padding: 0px;
+            margin-top: 40px;
+
+            grid-template-columns: repeat(6, 1fr);
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .menu-list {
+            list-style-type: none;
+            justify-self: center;
+            text-align: center;
+            margin-right: 20px;
+            padding: 5px;
+        }
+
+
+        .menu-list:hover {
+            color: rgb(158, 3, 3);
+        }
+
+        /* --------------menu-plus----------------------- */
+        .menu-plus {
+            display: grid;
+            padding: 0px;
+            width: 100vw;
+
+            grid-template-columns: repeat(6, 1fr);
+            justify-content: space-between;
+            grid-template-areas:
+                "p1 p2 p3 p4 p5 p6"
+                "p7 p8 p9 p10 p11 ..."
+                "p12 p13 p14 p15 ... ...";
+
+        }
+
+
+        .plus1 {
+            grid-area: p1;
+        }
+
+        .plus2 {
+            grid-area: p2;
+        }
+
+        .plus3 {
+            grid-area: p3;
+        }
+
+        .plus4 {
+            grid-area: p4;
+        }
+
+        .plus5 {
+            grid-area: p5;
+        }
+
+        .plus6 {
+            grid-area: p6;
+        }
+
+        .plus7 {
+            grid-area: p7;
+        }
+
+        .plus8 {
+            grid-area: p8;
+        }
+
+        .plus9 {
+            grid-area: p9;
+        }
+
+        .plus10 {
+            grid-area: p10;
+        }
+
+        .plus11 {
+            grid-area: p11;
+        }
+
+        .plus12 {
+            grid-area: p12;
+        }
+
+        .plus13 {
+            grid-area: p13;
+        }
+
+        .plus14 {
+            grid-area: p14;
+        }
+
+        .plus15 {
+            grid-area: p15;
+        }
+
+        .menu-list-plus {
+            list-style-type: none;
+            justify-self: center;
+            text-align: center;
+            color: gray;
+            padding: 5px;
+        }
+
+        .menu-list-plus:hover{
+            color: black;
+            text-decoration: underline;
+        }
+
+        #box {
+            display: none;
+        }
+
+        /* ----------------------------------------------- */
+        #main-box {
+            width: 100vw;
+            height: 80vh;
+            background: url("hero.jpg") no-repeat center;
+            background-size: cover;
+
+
+
+        }
+
+        /* ---------------------------------------------------------- */
+        @media (max-width:1050px) {
+
+            .hh-btn-img {
+                display: none;
+            }
+
+            #head {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin: 0px;
+            }
+
+
+
+            #head {
+                display: grid;
+
+
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ---------------------------------------------------------------- */
+        @media (max-width:800px) {
+            .page {
+                display: grid;
+                width: 100%;
+                height: 100vh;
+                grid-template-rows: repeat(5, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            #head {
+                margin: 0px;
+            }
+
+            header {
+                grid-row: 1/2;
+                grid-column: 1/4;
+                /* background-color: rgba(133, 131, 131, 0.8); */
+            }
+
+
+            .hh-ul {
+                display: none;
+            }
+
+            .hh-btn-img {
+                display: none;
+            }
+
+            .head1 {
+                justify-self: start;
+
+            }
+
+            .head3 {
+                display: grid;
+                justify-self: end;
+            }
+
+            .head3 #button {
+                display: block;
+                width: 40px;
+                height: 40px;
+                background: url("gnb_btn.png") no-repeat center;
+                background-size: cover;
+                justify-self: end;
+
+            }
+
+            #menu1 {
+                /* display: block; */
+                margin:0px;
+                padding: 0px;
+                justify-self: end;
+                grid-column: 3/4;
+                grid-row: 1/4;
+                z-index: 2;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            #menu1 .menu1 {
+                margin: 0px;
+                width: 200px;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                /* align-items: flex-start; */
+                justify-content: flex-start;
+            }
+
+            .menu-list1 {
+                padding: 5px;
+                border-bottom: 1px solid gray;
+                list-style-type: none;
+                justify-self: center;
+                text-align: center;
+
+                padding: 5px;
+            }
+
+
+            main {
+                grid-column: 1/4;
+                grid-row: 2/4;
+            }
+
+
+            #box {
+                display: none;
+            }
+
+            .gray{
+                width:80vw;
+                height: 100vh;
+                grid-column: 1/3;
+                grid-row: 1/5;
+                background-color: rgba(133, 131, 131, 0.8);
+                order: 1;
+                visibility: hidden;
+
+            }
+
+
+            #box{
+                display:  none;
+            }
+
+            .menu-plus{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <div id="head">
+                <div class="hh head1">
+                    <img src="social_icon1.gif" alt="" class="hh-img1 point">
+                    <img src="social_icon2.gif" alt="" class="hh-img2 point">
+                    <img src="social_icon3.gif" alt="" class="hh-img3 point">
+                    <img src="btn_mileage.gif" alt="" class="hh-btn-img point">
+                </div>
+                <div class="hh head2">
+                    <img src="signature.gif" alt="">
+                </div>
+                <div class="hh head3 point">
+                    <ul class="hh-ul">
+                        <li class="hh-list point">Login</li>
+                        <li class="hh-list point">Join</li>
+                        <li class="hh-list point">개인정보취급방침</li>
+                    </ul>
+                    <div id="button"></div>
+                </div>
+            </div>
+            <ul class="menu">
+                <li class="menu-list point">ZISHEN</li>
+                <li class="menu-list point">ZISHEN HOMME</li>
+                <li class="menu-list point">MEDIA</li>
+                <li class="menu-list point">SERVICE</li>
+                <li class="menu-list point">SHOP INFO</li>
+                <li class="menu-list point">COMPANY</li>
+            </ul>
+
+            <div id="box">
+                <hr>
+                <ul class="menu-plus">
+                    <li class="menu-list-plus plus1 point">About</li>
+                    <li class="menu-list-plus plus2 point">About</li>
+                    <li class="menu-list-plus plus3 point">Movie</li>
+                    <li class="menu-list-plus plus4 point">Faq</li>
+                    <li class="menu-list-plus plus5 point">Shop Info</li>
+                    <li class="menu-list-plus plus6 point">Company</li>
+                    <li class="menu-list-plus plus7 point">Lookbook</li>
+                    <li class="menu-list-plus plus8 point">Lookbook</li>
+                    <li class="menu-list-plus plus9 point">News</li>
+                    <li class="menu-list-plus plus10 point">1:1 Service</li>
+                    <li class="menu-list-plus plus11 point">Open Guide</li>
+                    <li class="menu-list-plus plus12 point">Catalogue</li>
+                    <li class="menu-list-plus plus13 point">Catalogue</li>
+                    <li class="menu-list-plus plus14 point">Event</li>
+                    <li class="menu-list-plus plus15 point">Group Order</li>
+                </ul>
+            </div>
+        </header>
+
+
+        <div id="menu1">
+            <ul class="menu1">
+                <li class="menu-list1 point">ZISHEN</li>
+                <li class="menu-list1 point">ZISHEN HOMME</li>
+                <li class="menu-list1 point">MEDIA</li>
+                <li class="menu-list1 point">SERVICE</li>
+                <li class="menu-list1 point">SHOP INFO</li>
+                <li class="menu-list1 point">COMPANY</li>
+            </ul>
+            <!-- 
+            <div id="box">
+                <hr>
+                <ul class="menu-plus">
+                    <li class="menu-list-plus plus1 point">About</li>
+                    <li class="menu-list-plus plus2 point">About</li>
+                    <li class="menu-list-plus plus3 point">Movie</li>
+                    <li class="menu-list-plus plus4 point">Faq</li>
+                    <li class="menu-list-plus plus5 point">Shop Info</li>
+                    <li class="menu-list-plus plus6 point">Company</li>
+                    <li class="menu-list-plus plus7 point">Lookbook</li>
+                    <li class="menu-list-plus plus8 point">Lookbook</li>
+                    <li class="menu-list-plus plus9 point">News</li>
+                    <li class="menu-list-plus plus10 point">1:1 Service</li>
+                    <li class="menu-list-plus plus11 point">Open Guide</li>
+                    <li class="menu-list-plus plus12 point">Catalogue</li>
+                    <li class="menu-list-plus plus13 point">Catalogue</li>
+                    <li class="menu-list-plus plus14 point">Event</li>
+                    <li class="menu-list-plus plus15 point">Group Order</li>
+                </ul>
+            </div>-->
+        </div>
+        <main>
+            <div id="main-box">
+
+            </div>
+        </main>
+        <div class="gray"></div>
+    </div>
+
+    <script>
+        const menuList = document.querySelectorAll(".menu-list");
+        const menu = document.querySelector(".menu");
+        const box = document.querySelector("#box");
+        const menu1 =document.querySelector("#menu1");
+        menu1.style.display = "none";
+
+
+
+        for (let index = 0; index < menuList.length; index++) {
+
+            menuList[index].onmouseover = function () {
+                menuList[index].style.color = "rgb(158, 3, 3)"
+                box.style.display = "block";
+            }
+
+        }
+
+
+
+        {
+            box.onmouseleave = function () {
+                box.style.display = "none";
+                for (let index = 0; index < menuList.length; index++) {
+                    menuList[index].style.color = "black";
+
+                }
+                num = 0;
+            }
+        }
+
+     
+
+        // 버튼 클릭 이벤트
+        document.querySelector("#button").addEventListener("click", function () {
+            if(menu1.style.display == "none"){
+            menu1.style.display = "block";
+            document.querySelector("header").style.gridColumn = "1/3";
+            document.querySelector(".gray").style.visibility = "visible";
+            document.querySelector("main").style.gridColumn = "1/3";
+            }else{
+                menu1.style.display = "none";
+                document.querySelector("header").style.gridColumn = "1/4";
+                document.querySelector(".gray").style.visibility = "hidden";
+            }
+       
+        });
+
+        menu1.onmouseleave = function(){
+            menu1.style.display = "none";
+                document.querySelector("header").style.gridColumn = "1/4";
+                document.querySelector(".gray").style.visibility = "hidden";
+        }
+
+
+
+    </script>
+</body>
+
+</html>

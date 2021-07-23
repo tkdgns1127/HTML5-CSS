@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body style="height:1500px">
+    <p>스크롤 이벤트</p>
+    <p id="myP" style="position:fixed">이건 따라오는 메뉴</p>
+    <script>
+        window.onscroll= function(){
+            if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+                document.getElementById("myP").className = "test";
+            }else {
+                document.getElementById("myP").className = "";
+            }
+        };
+    </script>
+</body>
+</html>

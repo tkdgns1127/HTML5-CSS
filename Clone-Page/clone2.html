@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="ui2.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+
+
+    <script>
+
+        // html dom 이 다 로딩된 후 실행된다.
+        $(document).ready(function () {
+            // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+            $(".li-title").click(function () {
+                var hiddenBox = $(this).next(".hidden-box");
+
+                // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+                if (hiddenBox.is(":visible")) {
+                    hiddenBox.slideUp();
+                } else {
+                    hiddenBox.slideDown();
+                }
+            });
+
+            $("#d4>ul>.ll").click(function () {
+                $(this).prevAll().css({
+                    "color": "#6f6f6f",
+                    "font-weight": "normal"
+                });
+                $(this).nextAll().css({
+                    "color": "#6f6f6f",
+                    "font-weight": "normal"
+                });
+                $(this).css({
+                    "color": "black",
+                    "font-weight": "bold"
+                });
+            });
+
+            $(".l1").click(function () {
+                $(".l2").css({ "color": "black" });
+                $(this).css({ "color": "rgb(0, 183, 255)" })
+            });
+
+            $(".l2").click(function () {
+                $(".l1").css({ "color": "black" });
+                $(this).css({ "color": "rgb(0, 183, 255)" })
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <header id="header">
+        <!-- menu bar -->
+        <nav class="menu-bar" id="menubar">
+            <h1><a href="clone.html">BAC CENTER</a></h1>
+
+            <ul>
+                <li><a href="#" class="menu-link">ALPINE DOME</a></li>
+                <li><a href="#" class="menu-link">YAK DOME</a></li>
+                <li><a href="#" class="menu-link">BAC 아카데미</a></li>
+                <li><a href="#" class="menu-link">BAC 센터소개</a></li>
+                <li><a href="#" class="menu-link">고객센터</a></li>
+            </ul>
+            <div class="btn">
+                <button>회원로그인</button>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- 0----------------------------------------------------------------------------- -->
+    <main>
+        <article class="a1">
+            <div class="d1">
+                <h1>고객센터</h1>
+                <ul>
+                    <li><img src="http://baccenter.blackyak.com/assets/images/icon-page-location-home.png"
+                            class="fa-house"></li>
+                    <li><img src="http://baccenter.blackyak.com/assets/images/icon-page-location-division.png"
+                            class="fa-slash-forward"></li>
+                    <li>고객센터</li>
+                    <li><img src="http://baccenter.blackyak.com/assets/images/icon-page-location-division.png"
+                            class="fa-slash-forward"></li>
+                    <li>공지사항</li>
+                </ul>
+            </div>
+            <div class="d2 dd">
+                <div>
+                    <ul>
+                        <div class="cc"> 
+                            <i class="c1"></i>
+                            <li class="l1">공지사항</li>
+                        </div>
+
+                        <div class="cc">
+                            <i class="c1"></i>
+                            <li class="l2">FAQ</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="d3 search">
+
+                    <input type="search" placeholder="검색 키워드를 입력하세요.">
+                    <i class="fas fa-search"></i>
+                    <!-- <img class="fa-search" src="http://baccenter.blackyak.com/assets/images/icon-content-search.png"> -->
+
+                </div>
+                <div id="d4">
+                    <ul>
+                        <li class="bolder ll">전체</li>
+                        <li class="ll">공지사항</li>
+                        <li class="ll">이벤트</li>
+                        <li class="ll">강의알림</li>
+                    </ul>
+
+                </div>
+            </div>
+        </article>
+
+
+        <article class="a2">
+            <h1>공지사항</h1>
+            <hr>
+            <ul>
+                <li class="list">
+                    <div class="li-title">
+                        <div class="circle">공지사항</div>
+                        <div class="box">
+                            <h4>야크돔 전용관(대관예약제) 운영 안내 (1/19~2/28)</h4>
+                            <p>오전 10:57:00</p>
+                        </div>
+                    </div>
+                    <div class="hidden-box">
+                        <p>1월19일(화)부터 2월 28일(일)까지 야크돔은 코로나19 예뱡을 위하여 전용관(대관예약제)으로 운영합니다. 단, 코로나 현황에 따른 정부정책에 따라 변경
+                            가능합니다.</p>
+                        <br>
+                        <p>◆◆ 회차</p>
+                        <p>1 10시-10시50분</p>
+                        <p>2 11시-11시50분</p>
+                        <p>3 점심시간</p>
+                        <p>4 13시-13시50분</p>
+                        <p>5 14시-14시50분</p>
+                        <p>6 15시-15시50분</p>
+                        <p>7 16시-16시50분</p>
+                        <br>
+                        <p>이용시간: 50분 (이용자들 사이의 접촉차단, 환기)</p>
+                        <br>
+                        <p>◆◆ 대관료</p>
+                        <p>주중 : 5만원 / 주말8만원</p>
+                        <br>
+                        <p>◆◆ 입장인원</p>
+                        <p>보호자포함 10명이하, 7세이상</p>
+                        <br>
+                        <p>예약방법</p>
+                        <p>네이버 야크돔 예약 시스템 이용</p>
+                        <p>일반이용과 대관이용 확인 후 예약하시면 됩니다.</p>
+
+
+                    </div>
+                </li>
+                <li class="list">
+                    <div class="li-title">
+                        <div class="circle">공지사항</div>
+                        <div class="box">
+
+                            <h4>야크돔 운영 안내 (코로나 19 예방 조치, 4/20)</h4>
+                            <p>오후 3:23:00</p>
+                        </div>
+                    </div>
+                    <div class="hidden-box">
+                        <p>안녕하세요. BAC 센터입니다.</p>
+                        <br>
+                        <p>코로나 19 예뱡을 위한 사회적 거리두기에 동참해주신 고객님께 진심으로 감사드립니다.</p>
+                        <p>야크돔은 휴관기간 동안 야크돔의 모든 홀드를 세척하였으며</p>
+                        <p>센터 전체 소독을 하여 안전하고 쾌적한 실내환경을 위해</p>
+                        <p>최선을 다해 준비하였습니다.</p>
+
+                        <br>
+                        <p>야크돔은 코로나 19 예방을 위해 아래와 같이 당분간 운영을 변경하고자 하오니 양해해주시고 동참해주시기 바랍니다.</p>
+                        <br>
+                        <p>1. 입장인원</p>
+                        <p>1)매시간 입장 정원 10명 이내</p>
+                        <p>2)사전예약을 안 하시면 정원 초과로 입장하실 수 없는 경우가 생길 수 있습니다.</p>
+                        <p>3)방문 전 전화로 예약 부탁드립니다.</p>
+                        <br>
+                        <p>2.운영 스케줄</p>
+                        <p>1)오픈 시간: 10시~18시 (정각에 입장 가능)</p>
+                        <p>2)소독 시간: 9시, 12시, 15시 (1시간/예약불가)</p>
+                        <br>
+                        <p>3. 이용자 준수사항</p>
+                        <p>1)최근 2주 사이 해외여행력이 있으신 분 출입 금지</p>
+                        <p>2)발열 또는 호흡기 등 유증상자, 고위험군 출입 금지</p>
+                        <p>3)마스크 착용 필수</p>
+                        <p>4)출입구 손세정제 사용</p>
+                        <p>5)방문대장 작성</p>
+                        <p>6)클라이밍 벽과 벽 사이 2m 간격 유지</p>
+                        <br>
+                        <p>감사합니다.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="d5">
+                <i class="fas fa-angle-double-left"></i>
+                <p>1</p>
+                <i class="fas fa-angle-double-right"></i>
+            </div>
+        </article>
+
+
+    </main>
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+    <footer>
+        <!-- <section>
+            <h1>BLACKYAK ALPINE CLUB</h1>
+            <p>BAC 클럽센터의 새로운 소식을 발빠르게 전딜해드립니다.</p>
+        </section> -->
+        <section>
+            <div class="f1">
+                <h1>BAC CENTER</h1>
+                <p>[주]블랙야크 대표이사 : 강태선 / 개인벙보책임자: 황일찬 / 사업자등록번호: 211-81-56627</p>
+                <p>통신판매업신고 : 제2016-서울서초-1484호 사업자 정보확인 / 137-866 서울특별시 서초구 바우뫼로201 블랙야크 양재사옥</p>
+                <p>FAX 02)2286-9700</p>
+                <p>Copyright@BLACKYAK Corp. 블랙야크 클럽서비스 ALL RIGHTs Reserved.</p>
+                <div class="f1-d1">
+                    <ul>
+                        <li>블랙야크블럽 서비스 이용약관</li>
+                        <!-- <li></li> -->
+                        <li>개인정보 처리 방침</li>
+                        <!-- <li><i class="fas fa-circle"></i></li>     -->
+                        <li>이메일 무단 수집 거부</li>
+                    </ul>
+                    <select name="" id="">
+                        <option value="family" selected="true">패밀리 사이트</option>
+                    </select>
+                </div>
+            </div>
+            <div class="f2">
+                <div class="f2-b f2-b1">
+                    <p>오시는 길</p>
+                    <h2 class="fbh1">서울시 강북구 삼양로 173길 52 BAC센터</h2>
+                    <div class="f2-box">
+                        <p>우이역 2번 출구에서 도선사 방향 150m</p>
+                        <div class="f2-box2">
+                            <i class="fas fa-map-marker-alt f2-img"></i>
+                            <p>위치보기</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="f2-b f2-b2">
+                    <p>야크돔 문의</p>
+                    <h2>02-907-9226</h2>
+                    <p class="pp">운영시간 : 화~일 10:00 ~ 18:00</p>
+                    <p class="lighter">(매주 월요일 휴무)</p>
+                </div>
+                <div class="f2-b f2-b3">
+                    <p>알파인돔/시설대관 문의</p>
+                    <h2>02-907-9224</h2>
+                    <p class="pp">운영시간 :화~일 10:00 ~ 18:00</p>
+                    <p class="lighter">(매주 월요일 휴무)</p>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+
+    <script>
+
+
+
+        window.addEventListener("scroll", function () {
+            if (document.documentElement.scrollTop > 10) {
+                document.querySelector(".menu-bar").style.opacity = "0.5"
+
+            } else {
+                document.querySelector(".menu-bar").style.opacity = "1"
+            }
+        });
+
+        // const ll = document.querySelectorAll(".list");
+        // const hb = document.querySelectorAll(".hidden-box");
+        // ll[0].addEventListener("click", function () {
+        //     if (hb[0].style.display == "none") {
+        //         hb[0].style.display = "block";
+        //         hb[1].style.display = "none";
+        //     } else {
+        //         hb[0].style.display = "none";
+        //         hb[1].style.display = "none";
+        //     }
+
+        // });
+        // ll[1].addEventListener("click", function () {
+        //     if (hb[1].style.display == "none") {
+        //         hb[1].style.display = "block";
+        //         hb[0].style.display = "none";
+        //     } else {
+        //         hb[0].style.display = "none";
+        //         hb[1].style.display = "none";
+        //     }
+        // });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slideUp {
+            animation-name: slideUp;
+            animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        body {
+            height: 1500px;
+        }
+
+        .col-1 {
+            float: left;
+        }
+
+        .col-2 {
+            float: left;
+            padding-left: 25px;
+        }
+
+        img {
+            width : 180px;
+            height: 100px;
+            visibility: hidden;
+        }
+        hr {
+            margin-top: 800px;
+        }
+    </style>
+</head>
+<body>
+    <p>제목</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus illum mollitia fugiat, esse vero, animi, accusamus quam adipisci obcaecati consequatur odit quia labore. Voluptate voluptatum esse recusandae similique commodi repellat.</p>
+
+    <hr>
+    <div class="col-1">
+        <img id="myImg" src="img/img_pulpit.jpg" width="340" height="250" alt="">
+    </div>
+
+    <div class="col-2">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel temporibus quas expedita provident reprehenderit est incidunt, repellat harum laudantium amet sed velit nobis, culpa maiores architecto animi rem? Excepturi, doloribus.
+    </div>
+
+    <script>
+        window.onscroll = function(){
+            if(document.body.scrollTop > 800 || document.documentElement.scrollTop > 800){
+                document.getElementById("myImg").className = "slideUp";
+            }
+        }
+    </script>
+</body>
+</html>

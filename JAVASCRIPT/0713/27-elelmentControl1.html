@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>컨텐츠1</li>
+        <li>컨텐츠2</li>
+        <li id="delete">컨텐츠3</li>
+        <li>컨텐츠4</li>
+        <li id="center">컨텐츠5</li>
+        <li>컨텐츠6</li>
+        <li>컨텐츠7</li>
+        <li>컨텐츠8</li>
+        <li>컨텐츠9</li>
+    </ul>
+
+    <script>
+        const el1 = document.createElement("li");
+        const text1 = document.createTextNode("새로운 컨텐츠1");
+        el1.append(text1);
+        document.getElementById("list").append(el1);
+        document.getElementById("list").prepend(el1);
+    
+        document.getElementById("delete").remove();
+
+        const el2 = document.createElement("li");
+        const text2 = document.createTextNode("새로운 컨텐츠2");
+        el2.append(text2);
+        document.getElementById("center").before(el2);
+        document.getElementById("center").after(el2);
+        
+    </script>
+</body>
+</html>

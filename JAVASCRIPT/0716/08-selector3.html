@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // 전체 요소 중 첫번째만 검색
+            // $("li").first().css("color","red");
+            $("li:first").css("color","red");
+            // 전체 요소 중 마지막만 검색
+            // $("li").last().css("color","blue");
+            $("li:last").css("color","blue");
+            // 전체 요소 중 홀수번째에 해당하는 엘리먼트 검색
+            $("li:odd").css("text-decoration","overline");
+            // 전체 요소 중 짝수번째에 해당하는 엘리먼트 검색
+            $("li:even").css("text-decoration","underline");
+            // 각 그룹에서 첫번째 요소
+            $("li:first-of-type").css("background-color","cyan");
+            // 각 그룹에서 마지막 요소
+            $("li:last-of-type").css("background-color","pink");
+            // 각 그룹에서 3번째 요소
+            $("li:nth-child(3)").css("border","5px dashed black");
+            // 각 그룹에서 3배수에 해당되는 요소
+            $("li:nth-child(3n)").css("font-family","궁서");
+            // 각 그룹에서 마지막 위치로부터 두번째 위치한 요소
+            $("li:nth-of-type(2)").css("background-color","purple");
+            // 자식이 한개밖어 없는 element 선택자
+            $("only-child").css("padding","1rem");
+            // 인덱스 요소가 2에 위치한 li를 선택
+            // $("li").eq(2).css("transform","translateX(3rem)");
+            $("li:eq(2)").css("transform","translateX(3rem)");
+            // 인덱스 요소가 12보다 큰 li를 선택
+            $("li:gt(12)").css("trasnform","rotatez(-5deg)");
+            // 인덱스 요소가 1보다 작은 li를 선택
+            $("li:lt(1)").css("trasnform","translateX(2rem)");
+            // 인덱스 요소를 2부터 5까지 선택
+            $("li").slice(2, 5).css("color","green");
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>아이템1</li>
+        <li>아이템2</li>
+        <li>아이템3</li>
+        <li>아이템4</li>
+        <li>아이템5</li>
+        <li>아이템6</li>
+        <li>아이템7</li>
+    </ul>
+    <ul>
+        <li>아이템8</li>
+        <li>아이템9</li>
+        <li>아이템10</li>
+        <li>아이템11</li>
+        <li>아이템12</li>
+        <li>아이템13</li>
+        <li>아이템14</li>
+    </ul>
+    <ul>
+        <li>아이템15</li>
+    </ul>
+</body>
+</html>

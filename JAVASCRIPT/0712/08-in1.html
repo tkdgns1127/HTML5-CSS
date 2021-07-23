@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lunch = {
+            doh : "백숙",
+            min : "감자전",
+            subin : "시리얼"
+        }
+
+        console.log("doh" in lunch);
+        console.log("sang" in lunch);
+        console.log("subin" in lunch);
+
+        with(lunch){
+            console.log(doh);
+            console.log(min);
+            console.log(subin);
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+
+    <div></div>
+    <button>버튼</button>
+    <script>
+        $("button").click(function(){
+            const obj = {
+                name : "박상훈",
+                address : "성남시 수정구"
+             }
+
+             $.get("http://localhost:2000/get_request3",obj,function(data,status)){
+                 $("div").html(`${data.name},${data.address}`);
+             }
+        });
+    </script>
+    
+</body>
+</html>

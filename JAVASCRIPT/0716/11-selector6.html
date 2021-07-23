@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <script>
+        // inArray : 배열안에서 찾은 데이터의 인덱스를 반환한다.
+        //           해당 데이터를 찾지 못하면 -1을 반환
+        // isArray : 입력한 객체가 배열 객체라면 true 아니면 false를 반환함
+        // merge : 인자값으로 입력한 두개의 배열 객체를 하나로 합침
+        // index() : 선택자로 요소를 먼저 선택한 다음 지정한 요소의 인덱스 정보를 가져옴
+        $(function(){
+            const arr1 = ["서울","대전","부산","전주"];
+            const arr2 = ["한국","미국","일본","중국"];
+            const obj = {
+                "name":"강부장",
+                "area":"서울"
+            };
+
+            let a = $.inArray("부산",arr1)
+            console.log(a); // 2
+
+            let b = $.isArray(arr1);
+            let c = $.isArray(obj);
+            console.log(b, c); // true false
+
+            $.merge(arr2, arr1);
+            console.log(arr2); // ["한국","미국","일본","중국","서울","대전","부산","전주"]
+
+            let d = $("li").index($("#list"));
+            console.log(d); // 2
+        });
+    </script>
+
+    <ul>
+        <li>내용1</li>
+        <li>내용2</li>
+        <li id="list">내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>
+</html>

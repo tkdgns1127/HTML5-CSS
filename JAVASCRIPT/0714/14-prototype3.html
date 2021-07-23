@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = {
+            a1 : 11
+        }
+        console.log(a.__proto__);
+        const b = [1,2,3];
+        console.log(b.__proto__.__proto__);
+
+        function c(){}
+        console.log(c.__proto__.__proto__);
+        console.log(b.toString());
+        console.log(c.toString());
+
+        a.__proto__.abc = 123;
+        console.log(b.abc);
+        console.log(c.abc);
+
+        b.__proto__.xyz = 987;
+        console.log(a.xyz);
+    </script>
+</body>
+</html>

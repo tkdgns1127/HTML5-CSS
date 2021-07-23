@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('안녕하세요');">버튼</button>
+    <button onclick="oneClick()">함수실행</button>
+    <button id="btn1">onclick 속성을 이용한 버튼 실행</button>
+    <button id="btn2">addEventListener를 활용한 버튼 실행</button>
+    <script>
+        function oneClick(){
+            console.log("코로나 시국을 하루빨리 이겨냅시다");
+        }
+
+        document.getElementById("btn1").onclick = function(){
+            alert("onclick 속성을 이용한 버튼을 사용했습니다.");
+        }
+
+        document.getElementById("btn2").addEventListener("click", function(){
+            alert("addEventListener를 활용한 버튼을 사용했습니다.");
+        });
+    </script>
+</body>
+</html>

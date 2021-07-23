@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $(".p1").on("mouseout",function(){
+                $(".p1").css("background-color","yellow");
+            });
+            $(".p2").on("mouseleave",function(){
+                $(".p2").css("background-color","green");
+            })
+        });
+    </script>
+</head>
+<body>
+    <p class="p1">
+        <span>ipsum dolor</span>, sit amet consectetur adipisicing elit. Sequi praesentium voluptas repellendus, at voluptatibus eum necessitatibus architecto nulla? Natus similique asperiores necessitatibus culpa accusantium beatae ipsam qui quod ad perspiciatis.
+    </p>
+    <p class="p2">
+        <span>Lorem ipsum</span> dolor, sit amet consectetur adipisicing elit. Sequi praesentium voluptas repellendus, at voluptatibus eum necessitatibus architecto nulla? Natus similique asperiores necessitatibus culpa accusantium beatae ipsam qui quod ad perspiciatis.
+    </p>
+</body>
+</html>

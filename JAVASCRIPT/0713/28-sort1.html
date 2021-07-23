@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log("a".localeCompare("b"));
+        // console.log("b".localeCompare("a"));
+        // console.log("b".localeCompare("b"));
+    
+        const list = ["책", "선풍기", "에어컨", "김치", "짜장면", "테이블", "랜턴"];
+
+        Array.from(list)
+        .sort(function(a, b){
+            return a.localeCompare(b)
+        })
+        .forEach(function(item){console.log(item);});
+    </script>
+</body>
+</html>

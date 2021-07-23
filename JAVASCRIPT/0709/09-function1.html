@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="btn" onclick="console.log('안녕하세요');">버튼</button> -->
+    <button id="btn" onclick="func1()">버튼</button>
+    <script>
+        // 기명 함수 표현식
+        function func1(){
+            console.log("안녕하세요");
+        }
+
+        // document.querySelector("#btn").onclick = func1;
+        document.querySelector("#btn").addEventListener("click", function(){
+            func1();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let obj = {
+            name : '김근형',
+            address : '경기도 수원시',
+            age : 41,
+
+            teaching : function (){
+                console.log("사람들을 가르칩니다.");
+            },
+            counseling : function (){
+                console.log("취업자 및 창업자 사람들에게 조언을 합니다.");
+            }
+            // teaching (){
+            //     console.log("사람들을 가르칩니다.");
+            // },
+            // counseling (){
+            //     console.log("취업자 및 창버자 사람들에게 조언을 합니다.");
+            // }
+        };
+
+        obj.gender = "male";
+        obj.age = 37;
+        delete obj.address;
+        
+        console.log(obj.name);
+        console.log(obj.address);
+        console.log(obj.age);
+        console.log(obj.gender);
+
+        obj.teaching();
+        obj.counseling();
+
+</script>
+</body>
+</html>

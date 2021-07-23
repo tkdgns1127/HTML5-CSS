@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        /* common */
+        body {
+            margin : 0;
+            padding : 0;
+            font-family: "Open Sans", sans-serif;
+            font-size : 16px;
+        }
+        ul {
+            margin : 0;
+            padding : 0;
+            list-style-type: none;
+        }
+        img {
+            max-width: 100%;
+            border : 0;
+        }
+
+        /* header */
+        .header {
+            margin : 0 auto;
+            width : 1019px;
+            height : 100px;
+        }
+
+        .header .social {
+            position: relative;
+            float : left;
+            margin : 30px 0 25px;
+            width : 196px;
+            height : 25px;
+        }
+        .header .social ul li {
+            float: left;
+        }
+
+        .header .social li a {
+            display: block;
+            margin : 0 3px;
+            width : 25px;
+            height :25px;
+        }
+        .header .social li:first-child a {
+            margin-left: 0;
+        }
+        .header .social .mileage_btn {
+            margin-left: 100px;
+            width : 88px;
+            height : 24px;
+        }
+        .header .signature {
+            float : left;
+            margin : 10px 0 0 236px;
+            width : 155px;
+            height: 78px;
+        }
+
+        .header .signature img {
+            width : 100%;
+        }
+
+        .header .location {
+            float : right;
+            margin-top : 38px;
+            height: 26px;
+        }
+
+        .header .location li {
+            float: left;
+            height : 26px;
+        }
+
+        .header .location li a {
+            display : block;
+            padding : 0 15px;
+            line-height: 26px;
+            text-decoration: none;
+            text-align: center;
+            font-family: "돋움", sans-serif;
+            font-size : 0.7rem;
+            background: url("images/bg_table_col.gif") no-repeat left center;
+            color : #797d85
+        }
+
+        .header .location li:first-child a {
+            background: none;
+        }
+        .header .location li:nth-child(3) a {
+            padding-right: 0;
+        }
+
+        /* mobile nav */
+        .mobile_tab {
+            display: none;
+            position: absolute;
+            right: 0;
+            top : 0;
+            z-index: 120;
+            margin-right : 20px;
+            margin-top: 15px;
+            width : 20px;
+        }
+
+        .mobile_tab a {
+            display: block;
+            width : 28px;
+        }
+
+        .mobile_nav {
+            position: fixed;
+            right : -220px;
+            top : 0;
+            z-index: 150;
+            padding : 40px 24px;
+            width : 220px;
+            height : 100%;
+            background: #fff;
+            box-sizing: border-box;
+            box-shadow: 0 0 2px rgba(0,0,0, 0.2);
+            transition: right 0.4s ease-out;
+        }
+
+        .mobile_nav.active {
+            right : 0;
+        }
+
+        .mobile_nav > ul > li > a {
+            display: block;
+            padding : 0 14px;
+            width : 100%;
+            height : 50px;
+            line-height: 50px;
+            text-decoration: none;
+            font-size : 0.85rem;
+            font-weight: 600;
+            color : #2f2f2f;
+            border-bottom: 1px dotted #ccc;
+            box-sizing: border-box;
+        }
+
+        .mobile_nav > ul > li:hover > a {
+            color : #b4252d;
+        }
+
+        .mobile_nav .sub {
+            display: none;
+        }
+
+        .mobile_nav .sub > li {
+            height : 35px;
+            border-top : 1px dotted #eaeaea;
+        }
+
+        .mobile_nav .sub > li:first-child {
+            border-top: none;
+        }
+
+        .mobile_nav .sub li a{
+            display: block;
+            padding : 0 10px;
+            width : 100%;
+            line-height: 35px;
+            text-decoration: none;
+            font-size : 0.8rem;
+            color:#2f2f2f;
+            background: #f4f4f4;
+            border-bottom: 1px dotted #eaeaea;
+            box-sizing: border-box;
+        }
+
+        .mobile_nav .sub li a:hover {
+            background: #fff;
+        }
+
+        /* desktop nav*/
+        .nav {
+            position: relative;
+        }
+
+        .nav > ul {
+            position: absolute;
+            left : 0;
+            top : 0;
+            width : 100%;
+            height : 54px;
+            overflow: hidden;
+            text-align: center;
+            background : url("images/bg_gnb.gif") repeat-x 0 0;
+            transition : height 0.3s;
+        }
+
+        .nav > ul.over {
+            height : 185px;
+        }
+
+        .nav > ul > li {
+            display: inline-block;
+            position : relative;
+            margin-left : 61px;
+            height : 54px;
+            overflow: hidden;
+        }
+
+        .nav > ul.over > li {
+            height : 185px;
+        }
+
+        .nav > ul > li:first-child {
+            margin-left: 0;
+        }
+
+        .nav > ul > li > a {
+            display : block;
+            padding : 0 30px;
+            line-height: 54px;
+            text-decoration: none;
+            font-style: 0.85rem;
+            color : #2f2f2f;
+        }
+
+        .nav > ul > li:first-child > a{
+            padding-left : 0;
+        }
+
+        .nav > ul > li:nth-child(6) > a{
+            padding-right : 0;
+        }
+
+        .nav > ul > li:hover > a{
+            color : #b4252d;
+        }
+
+        .nav .sub {
+            position : absolute;
+            margin-left: 30px;
+            padding-top: 14px;
+            width: 100%;
+            height : 131px;
+        }
+
+        .nav > ul > li:first-child .sub {
+            margin-left: 0;
+        }
+        .nav .sub a {
+            display: block;
+            padding : 6px 0 7px;
+            line-height: 1;
+            text-align: left;
+            text-decoration: none;
+            font-size : 0.75rem;
+            color : #a0a0a0;
+        }
+
+        .nav .sub a:hover {
+            text-decoration: underline;
+            color : #000;
+        }
+
+        /* hero */
+        .hero {
+            margin-top: 54px;
+        }
+
+        .hero img {
+            width : 100%;
+            height : auto;
+        }
+
+        .transparency {
+            display: none;
+            position: fixed;
+            left : 0;
+            top : 0;
+            z-index: 130;
+            width: 100%;
+            height : 100%;
+            background: rgba(0,0,0,.4);
+        }
+
+        .transparency.active {
+            display: block;
+        }
+
+        /* responsive */
+        @media screen and (max-width : 1050px){
+            .header{
+                width : 825px;
+            }
+            .header .signature {
+                margin-left: 146px;
+            }
+            .nav li:nth-child(6) {
+                display: none;
+            }
+            .nav li:nth-child(5) a {
+                padding-right : 0;
+            }
+        }
+
+        @media screen and (max-width: 800px){
+            .header{
+                width : auto;
+                height : 72px;
+            }
+            .header .social {
+                margin : 23px 0 24px 20px;
+                width : 90px;
+            }
+            .header .social .mileage_btn {
+                display: none;
+            }
+
+            .header .signature {
+                position : absolute;
+                left : 50%;
+                top : 0;
+                float: none;
+                margin-left: -50px;
+                width : 100px;
+                height: 54px;;
+            }
+
+            .header .location {
+                display: none;
+            }
+            .mobile_tab {
+                display: block;
+            }
+            .nav {
+                display: none;
+            }
+            .hero {
+                margin-top: 0;
+            }
+        }
+    </style>
+    <script>
+        $(function () {
+            let status = "";
+
+            $(window).resize(function(){
+                let w = $(this).width();
+
+                if(w <= 850){
+                    status="mobile";
+                }else{
+                    status="pc";
+                    if($(".mobile_nav").hasClass("active")){
+                        $(".mobile_nav").removeClass("active");
+                        $(".mobile_nav .sub").css({"display":"none"});
+                        $(".transparency").removeClass("active");
+                        $(".container").removeClass("active");
+                    }
+                }
+            });
+            $(window).trigger("resize");
+
+            $(".nav ul").hover(function(){
+                if(status == "pc"){
+                    $(this).addClass("over");
+                }
+            }, function(){
+                if(status == "pc"){
+                    $(this).removeClass("over");
+                }
+            });
+
+            $(".mobile_tab").click(function(){
+                $(".mobile_nav").addClass("active");
+                $(".transparency").addClass("active");
+                $(".container").addClass("active");
+            });
+
+            $(".mobile_nav > ul > li > a").click(function(){
+                if(status == "mobile"){
+                    if($(this).next(".sub").css("display")=="none"){
+                        $(".mobile_nav .sub").slideUp(300);
+                        $(this).next(".sub").slideDown(300);
+                    }else{
+                        $(this).next(".sub").slideUp(300);
+                    }
+                }
+            });
+
+            $(".transparency").click(function(){
+                $(".mobile_nav").removeClass("active");
+                $(".mobile_nav .sub").css({"display":"none"});
+                $(this).removeClass("active");
+                $(".container").removeClass("active");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="social">
+                <ul>
+                    <li><a href=""><img src="images/social_icon1.gif" alt=""></a></li>
+                    <li><a href=""><img src="images/social_icon2.gif" alt=""></a></li>
+                    <li><a href=""><img src="images/social_icon3.gif" alt=""></a></li>
+                </ul>
+                <div class="mileage_btn"><a href=""><img src="images/btn_mileage.gif" alt=""></a></div>
+            </div>
+            <div class="signature"><a href=""><img src="images/signature.gif" alt=""></a></div>
+            <div class="location">
+                <ul>
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Join</a></li>
+                    <li><a href="">개인정보취급방침</a></li>
+                </ul>
+            </div>
+        </div><!-- // header end -->
+        <div class="mobile_tab"><a href="#"><img src="images/gnb_btn.png" alt="Mobile Tab"></a></div>
+        <div class="mobile_nav">
+            <ul>
+                <li>
+                    <a href="">ZISHEN</a>
+                    <ul class="sub">
+                        <li><a href="">About</a></li>
+                        <li><a href="">Lookbook</a></li>
+                        <li><a href="">Catalogue</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">ZISHEN HOMME</a>
+                    <ul class="sub">
+                        <li><a href="">About</a></li>
+                        <li><a href="">Lookbook</a></li>
+                        <li><a href="">Catalogue</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">MEDIA</a>
+                    <ul class="sub">
+                        <li><a href="">Movie</a></li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Event</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">SERVICE</a>
+                    <ul class="sub">
+                        <li><a href="">Faq</a></li>
+                        <li><a href="">1:1 Service</a></li>
+                        <li><a href="">Group Order</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">SHOP INFO</a>
+                    <ul class="sub">
+                        <li><a href="">Shop Info</a></li>
+                        <li><a href="">Open Guide</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">COMPANY</a>
+                    <ul class="sub">
+                        <li><a href="">Company</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="">ZISHEN</a>
+                    <ul class="sub">
+                        <li><a href="">About</a></li>
+                        <li><a href="">Lookbook</a></li>
+                        <li><a href="">Catalogue</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">ZISHEN HOMME</a>
+                    <ul class="sub">
+                        <li><a href="">About</a></li>
+                        <li><a href="">Lookbook</a></li>
+                        <li><a href="">Catalogue</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">MEDIA</a>
+                    <ul class="sub">
+                        <li><a href="">Movie</a></li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Event</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">SERVICE</a>
+                    <ul class="sub">
+                        <li><a href="">Faq</a></li>
+                        <li><a href="">1:1 Service</a></li>
+                        <li><a href="">Group Order</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">SHOP INFO</a>
+                    <ul class="sub">
+                        <li><a href="">Shop Info</a></li>
+                        <li><a href="">Open Guide</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">COMPANY</a>
+                    <ul class="sub">
+                        <li><a href="">Company</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- // nav end -->
+        <div class="hero"><img src="images/hero.jpg" alt=""></div>
+    </div>
+    <div class="transparency"></div>
+</body>
+</html>

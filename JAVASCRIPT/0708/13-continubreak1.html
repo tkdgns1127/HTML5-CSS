@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><lavel>반복할 횟수 지정 : <input type="text" id="num"></lavel></li>
+        <li><button id="btn">설정</button></li>
+    </ul>
+    <script>
+       
+        document.querySelector("#btn").addEventListener("click",function(){
+            let val1 = Number(document.querySelector("#num").value);
+            let count = 0;
+            while(count < val1){
+                console.log("이것은 vla1의 횟수만큼 반복합니다.");
+                count++;
+            }
+            console.log("끝");
+        });
+    </script>
+</body>
+</html>

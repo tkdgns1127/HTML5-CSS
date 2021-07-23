@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // 바로 위의 부모요소 선택 (parentElement)
+            $(".parent").parent().css("padding","1rem");
+            // 해당 요소 위의 모든 부모요소 선택
+            $(".parents").parents().css("border","1px solid blue");
+            // 해당 요소의 모든 자식 요소 엘리먼트 선택 (children)
+            $(".children").children().css("border","3px dotted red");
+            // 해당 요소의 이전 요소 엘리먼트 선택 (previousElementSibling)
+            $(".prev").prev().css("background-color","yellow");
+            // 해당 요소의 이전에 위치한 모든 엘리먼트 선택
+            $(".prev").prevAll().css("font-size","1.5rem");
+            // 해당 요소부터 지정된 요소 까지 위치한 모든 엘리먼트 선택
+            $(".prevuntil").prevUntil(".prev").css("font-style","italic");
+            // 해당 요소의 이후 요소 엘리먼트 선택 (nextElimentSibling)
+            $(".next").next().css("font-family","궁서");
+            // 해당 요소의 이후 모든 요소 엘리먼트 선택
+            $(".next").nextAll().css("border","1px dashed green");
+            // 해당 요소부터 지정된 요소 까지 위치한 모든 엘리먼트 선택
+            $(".next").nextUntil(".nextuntil").css("background-color","cyan");
+        });
+    </script>
+</head>
+
+<body>
+    <ul class="children">
+        <li><p class="parent">아이템1</p></li>
+        <li><p class="parents">아이템2</p></li>
+        <li class="prev"><p>아이템3</p></li>
+        <li><p>아이템4</p></li>
+        <li class="prevuntil"><p>아이템5</p></li>
+    </ul>
+
+    <ul>
+        <li class="next"><p>아이템6</p></li>
+        <li><p>아이템7</p></li>
+        <li><p>아이템8</p></li>
+        <li><p>아이템9</p></li>
+        <li class="nextuntil"><p>아이템10</p></li>
+    </ul>
+</body>
+
+</html>
+
+
+
+

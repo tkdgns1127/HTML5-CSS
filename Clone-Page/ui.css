@@ -1,23 +1,73 @@
 header{
+    display: grid;
     color: #fff;
     /* font 수정하기 */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    width: 100vw;
+    height: 90vh;
+    margin-top: 0;
+    /* height: 880px; */
     font-family: sans-serif;
+
 }
 
-.menu-bar{
+body{
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+}
+
+ul{
+    padding : 0px;
+}
+
+header .menu-bar{
+    top: 0px;
+    left: 0px;
+    position: fixed;
     display: flex;
-    width: 100vw;
-    height: 10vh;
+    width: 100%;
+    height: 70px;
     background-color: black;
     align-items: center;
-    /* justify-content: center; */
+    order: 1;
+
+    margin-left: 0px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index:6;
+    margin-top: 0;
+
 }
+
+header section{
+    grid-column: 1/2;
+    grid-row: 1/2;
+ 
+    
+}
+
+header section:nth-child(3){
+    display: block;
+    grid-column: 1/2;
+    grid-row: 1/4;
+    align-self: end;
+    justify-self: center;
+    z-index: 3;
+  
+ 
+}
+
+
+/* --------------------------------------------------------------------------- */
+
 
 .menu-bar h1{
     margin-left: 50px;
     font-size: 2em;
     font-family: cursive;
-    flex :2
+    flex :2;
 }
 
 .menu-bar ul{
@@ -28,12 +78,15 @@ header{
 .menu-bar ul li{
     list-style: none;
     padding : 10px;
-
+    margin:0px 20px;
 }
+
+
 
 .menu-link{
     color: #fff;
     text-decoration: none;
+    /* z-index: 5; */
 }
 
 .menu-bar .btn{
@@ -51,6 +104,659 @@ header{
     
 }
 
+.menu{
+    padding-left: 0px;
+    display: flex;
+    width: 100vw;
+    height: 50px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-list{
+    margin-left: 10px;
+    width: 5px;
+    height: 5px;
+    display: flex;
+    border: 3px solid white;
+    border-radius: 50%;
+    flex-direction: row;
+}
+
+.menu-list:hover{
+    width: 25px;
+    height: 25px;
+    border: 6px solid white;
+}
+
 .main-screen{
-    display : grid;
+    display: grid;
+    width: 100vw;
+
+    /* background-size: cover; */
+}
+
+.main-screen-img{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    background : no-repeat center;
+    background-size: cover;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+
+/* animation */
+@keyframes animation{
+    0%{
+        margin-top:10%;
+        /* visibility:hidden; */
+        display: none;
+        
+    }
+    100%{
+        
+        
+        /* visibility: visible; */
+    }
+}
+
+@keyframes animation2{
+    0%{
+       margin-top: 0;
+       visibility:hidden;
+        
+    }
+    100%{
+        
+        margin-top:0;
+        visibility:hidden;
+    }
+}
+/* 
+.ani p:nth-child(1){animation : animation 3s;}
+.ani p:nth-child(2){animation-name: animation2; animation-delay: 2s;}
+.ani p:nth-child(3){animation-name: animation2; animation-delay: 3s;}
+.ani p:nth-child(4){animation-name: animation2; animation-delay: 3s;}
+.ani p:nth-child(5){animation-name: animation2; animation-delay: 3s;}
+.ani p:nth-child(6){animation-name: animation2; animation-delay: 3s;}
+.ani p:nth-child(7){animation-name: animation2; animation-delay: 3s;}
+.ani .btn2:nth-child(8){animation-name: animation2; animation-delay: 4s;}
+ */
+
+
+.ani{
+    animation: animation 2s;
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+    margin-top:70px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 0;
+}
+/* --------------------------------------------------------------------------------------- */
+.ani p{
+    font-size: 2em;
+    line-height: 0px; 
+    margin-top: 0px;
+    /* animation: animation 2s; */
+}
+
+.ani p:nth-child(1){font-size: 2em;}
+.ani p:nth-child(2){
+    font-size : 2em; 
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 45px;
+    padding : 0px;
+    
+}
+.ani p:nth-child(n+3):nth-child(-n+7){
+    font-size: 1em;
+    margin-top: 0px;
+    line-height: 0.4em;
+}
+
+.ani p:nth-child(n+3):nth-child(-n+5){
+    font-weight: bold;
+    animation-delay: 2s;
+}
+
+.ani p:nth-child(5){
+    margin-bottom: 2em;
+}
+#hiking p{
+    font-size: 2em;
+    font-weight: normal;
+    margin-top: 40px;
+}
+
+#hiking p:first-child{
+    font-weight: bold;
+}
+
+
+.btn2{
+    width: 340px;
+    margin-top: 40px;
+    display : flex;
+    justify-content: space-between;
+}
+
+.btn2 button{
+
+    background-color: rgba( 56, 56, 56, 0.5 );
+    color: #fff;
+    border: 1px solid white;
+    font-weight: bold;
+    padding : 15px 31px;
+    
+    /* opacity: 0.5; */
+    font-size: 1.2em;
+    animation-delay: 4s;
+}
+
+
+
+
+.main-screen-img:nth-child(1){
+    background: url(http://baccenter.blackyak.com/assets/images/main-visual-pc-02.jpg) no-repeat center;
+    background-size: cover;
+    
+ 
+}
+.main-screen-img:nth-child(2){
+    background: url(http://baccenter.blackyak.com/assets/images/main-visual-pc-04.jpg) no-repeat center;
+    background-size: cover;
+    display: none;
+
+}
+.main-screen-img:nth-child(3){
+    background: url(http://baccenter.blackyak.com/assets/images/main-visual-pc-03.jpg) no-repeat center;
+    background-size: cover;
+    display: none;
+}
+.main-screen-img:nth-child(4){
+    background: url(http://baccenter.blackyak.com/assets/images/main-visual-mb-01.jpg) no-repeat center;
+    background-size: cover;
+    display: none;
+}
+
+
+/*----------------------------- main -------------------------------------*/
+ main{
+     left: 0px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 4fr 2fr 3fr;
+    justify-content: center;
+    align-content: center;
+}
+
+article .bg{
+    width: 40vw;
+    height: 65vh;
+    background: no-repeat center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+article .bg .in-bg{
+    width: 180px;
+    height: 180px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: end;
+    align-self:flex-end;
+   
+
+}
+
+article .bg1 .in-bg{ background-image: url(http://baccenter.blackyak.com/assets/images/icon-explore-01.png);}
+article .bg2 .in-bg{ background-image: url(http://baccenter.blackyak.com/assets/images/icon-explore-02.png);}
+
+.art:first-child{
+    margin-top: 100px;
+    margin-left : 100px;
+    padding-right: 50px;
+    line-height: 0;
+}
+
+.art:nth-child(2){
+    margin-top: 100px;
+    margin-right: 100px;
+    padding-left: 50px;
+    line-height: 0;
+
+}
+
+.art h1{
+    font-size: 3em;
+    color: rgb(48, 47, 47);
+}
+
+.art p{
+    color :rgb(48, 47, 47);
+    font-weight: lighter;
+}
+
+.art3{
+
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    align-content: center;
+    margin-left: 100px;
+    
+}
+
+#art-p{
+    grid-column: 1/5;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.5em;
+    margin-top: 0;
+
+}
+
+.art3 #a3-title{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-left: 100px;
+    padding: 30px;
+}
+
+.art3 div:nth-child(3){
+    grid-column: 2/5;
+    grid-row: 2/3;
+
+}
+
+.art3 div h1{
+    font-size: 2.5em;
+    color: rgb(48, 47, 47);
+    width: 200px;
+
+}
+
+
+
+.list{
+    display: flex;
+    justify-content:  center;
+
+    align-content: center;
+}
+
+.list li{
+
+    margin-left: 50px;
+    margin-right: 20px;
+    list-style: none;
+  
+
+}
+
+.list li a{
+
+    display: flex;
+    text-decoration: none;
+    color: rgb(48, 47, 47);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.list-box{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.circle{
+    background-color: rgb(0, 183, 255);
+    width: 2px;
+    height: 2px;
+    border: 6px solid rgb(0, 183, 255);
+    border-radius: 50%;
+    margin-bottom : 10px;
+    visibility: hidden;
+}
+
+.list li a p{
+    text-align: center;
+    line-height: 0;
+}
+
+.list li:nth-child(3) p:nth-child(3){
+    margin-top: 5px;
+}
+.list-img{
+    width: 60px;
+    height: 60px;
+    background: no-repeat center;
+    background-size: cover;
+  
+    
+} 
+
+/* -------------------------------------------------------------------------------------------------------- */
+#page3{
+    grid-column: 1/3;
+    background-color: rgba(230, 227, 227, 0.3);
+
+}
+
+#p3-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#p3-content h1{
+    font-size: 2.5em;
+    color: rgb(48, 47, 47);
+    margin-top: 70px;
+    line-height: 0px;
+
+}
+
+#p3-content p{
+    font-size: 1.1em;
+    margin-top: 0px;
+}
+
+.list2{
+    display: flex;
+    justify-content:  center;
+
+    align-content: center;
+}
+
+.list .li-b{
+    list-style-type: none;
+    /* padding-right: 30px; */
+    /* padding-left: 30px; */
+    margin: 0px;
+    border-right: 1px solid #ccc;
+    
+
+
+}
+
+.li-b a p{
+    
+    padding-right: 30px;
+    padding-left: 30px;
+    border-right: 1px solid #ccc;
+}
+
+.li-b .circle{
+    background-color: rgb(0, 183, 255);
+    width: 2px;
+    height: 2px;
+    border: 2px solid rgb(0, 183, 255);
+    border-radius: 50%;
+    margin-bottom : 20px;
+    visibility: hidden;
+
+}
+
+
+.li-b:last-child{
+    border-right: 0px;
+}
+
+#p3-content #v-more{
+    position:relative;
+    left: 670px;
+    bottom:100px;
+    font-size: 1.2em;
+    border-bottom: 1px solid black;
+
+
+}
+
+
+#p3-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info{
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.info-img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.info p{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info p:nth-child(3){
+    margin-top: 0;
+    line-height: 0;
+}
+
+.info .info-title{
+
+    font-weight: lighter;
+    font-size: 0.85em;
+    margin-top:25px;
+    /* margin-bottom: 0px; */
+    /* line-height: 0; */
+
+}
+
+/* ---------------hover event-------------------------- */
+.l1:hover .c1{
+    visibility: visible;
+}
+.l2:hover .c2{
+    visibility: visible;
+}
+.l3:hover .c3{
+    visibility: visible;
+}
+.l4:hover .c4{
+    visibility: visible;
+}
+.l5:hover .c5{
+    visibility: visible;
+}
+.l6:hover .c6{
+    visibility: visible;
+}
+.l7:hover .c7{
+    visibility: visible;
+}
+.l8:hover .c8{
+    visibility: visible;
+}
+.l9:hover .c9{
+    visibility: visible;
+}
+/* ---------------------------footer ------------------------------------- */
+
+footer section:first-child{
+    height: 200px;
+    background: url(http://baccenter.blackyak.com/assets/images/bg-main-club.jpg) no-repeat top;
+    background-size: cover;
+    /* opacity: 0.5; */
+    /* background-color: cyan; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;;
+}
+
+section:first-child h1{
+    font-size: 2.5em;
+    margin : 0px;
+}
+
+section:nth-child(2){
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: black;
+    color: white;
+}
+
+.f1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    font-size : 0.8em;
+}
+
+.f1 h1{
+    font-size: 2.5rem;
+}
+
+.f1 p{
+    margin: 0px;
+}
+
+.f1 ul{
+    display : flex;
+    
+}
+
+.f1 ul li{
+    color: cyan;
+    margin-right: 40px;
+    list-style-type: disc;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.f1 p:nth-child(5){
+    margin-top: 20px;
+}
+.f1 ul li:first-child{
+    list-style-type: none;
+    padding : 0px;
+}
+
+.f2{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.f2-b{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.f2-b p{
+    margin: 10px;
+}
+
+.f2-b p:nth-child(1){
+    margin-top: 20px;
+}
+
+.f2-b2 h2:nth-child(2), .f2-b3 h2:nth-child(2){
+    color: cyan;
+}
+
+.fbh1{
+    font-size: 1.1em;
+}
+
+.f2 p{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.f2-box{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.f2-box p{
+    
+    font-size: 0.8em;
+    font-weight: lighter;
+   
+}
+
+.f2-box div{
+    width: 100px;
+    height: 30px;
+    border: 1px solid white;
+    font-size: 0.9em;
+    align-self:flex-end;
+}
+
+.f2-box2{
+    display: flex;
+    /* grid-template-columns: repeat(2,1fr); */
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.f2-img{
+    width:20px;
+    height: 20px;
+    justify-self: end;
+    align-self: center;
+}
+
+.f2-b .pp{
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.lighter{
+    color: #8f8f8f;
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+.f1-d1{
+    display: flex;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+select{
+    background-color: black;
+    height: 30px;
+    border: 1px solid rgba(204, 203, 203, 0.705);
+    color:rgba(204, 203, 203, 0.705);
 }

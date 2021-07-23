@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: #ccc;
+            color: black;
+            width: 600px;
+            height: 150px;
+        }
+
+        .lorem {
+            display: none;
+            background-color: honeydew;
+            color: black;
+            width: 600px;
+            height: 250px;
+        }
+
+        div:hover {
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section" onclick="loremView(0)">Section1
+
+    </div>
+    <div class="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem autem modi dolore aspernatur
+        harum, culpa earum delectus similique provident labore dignissimos sunt, nulla, facere numquam sint. Obcaecati
+        asperiores ipsum totam!</div>
+    <div class="section" onclick="loremView(1)">
+        Section2
+
+    </div>
+    <div class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vitae placeat officia hic
+        consequuntur commodi maxime nemo fugiat modi necessitatibus. Expedita, labore amet qui tenetur natus quo
+        voluptatibus ipsa repellat.
+
+    </div>
+    <div class="section" onclick="loremView(2)">
+        Section3
+
+    </div>
+
+    <div class="lorem">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda error harum officiis vero saepe, expedita
+        illo facilis eaque voluptas sunt reprehenderit perferendis explicabo dolorum amet voluptatibus ex vel
+        voluptates! Consequatur.
+    </div>
+    <script>
+        let section = document.querySelectorAll(".section");
+        let loremText = document.querySelectorAll(".lorem");
+        function loremView(n) {
+            for (let index = 0; index < section.length; index++) {
+                loremText[index].style.display = "none";
+            }
+            loremText[n].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

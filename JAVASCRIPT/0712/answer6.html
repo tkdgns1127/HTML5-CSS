@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            display: grid;
+            width: 1200px;
+            margin: 0px;
+            padding: 0px;
+
+            grid-template-columns: repeat(4, 300px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            display: grid;
+            width: 300px;
+            height: 100px;
+            background-color: #444;
+            color: white;
+            font-size: 1.4em;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .menulink {
+            text-decoration: none;
+            color: white;
+
+        }
+        .grid-container{
+            display: grid;
+        }
+
+
+        .content {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            width: 1200px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            padding-left: 20px;
+            color: white;
+            visibility: hidden;
+
+        }
+
+        .content h1 {
+            margin-top: 0px;
+        }
+
+        .content:nth-child(1) {
+            background-color: green;
+        }
+
+        .content:nth-child(2) {
+            background-color: red;
+        }
+
+        .content:nth-child(3) {
+            background-color: blue;
+        }
+
+        .content:nth-child(4) {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="menulist"><a href="#" class="menulink">Home</a></li>
+            <li class="menulist"><a href="#" class="menulink">News</a></li>
+            <li class="menulist"><a href="#" class="menulink">Content</a></li>
+            <li class="menulist"><a href="#" class="menulink">About</a></li>
+        </ul>
+    </nav>
+    <div class="grid-container">
+        <div class="content">
+            <h1>Home</h1>
+            <p>Home is Where the heart is.. </p>
+        </div>
+        <div class="content">
+            <h1>News</h1>
+            <p>Some news this finde day!</p>
+        </div>
+        <div class="content">
+            <h1>Contact</h1>
+            <p>Get in touch, or swing by for a cup of coffee.</p>
+        </div>
+        <div class="content">
+            <h1>About</h1>
+            <p>who we are and what we do</p>
+        </div>
+    </div>
+
+    <script>
+        let content = document.querySelectorAll(".content");
+        let menulist = document.querySelectorAll(".menulist");
+        let color = ["green", "red", "blue", "orange"];
+
+        for (let index = 0; index < menulist.length; index++) {
+            menulist[index].addEventListener("click", function () {
+                for (let i = 0; i < content.length; i++) {
+                    menulist[i].style.backgroundColor = " #444"
+                    content[i].style.visibility = "hidden"
+                }
+
+                menulist[index].style.backgroundColor = `${color[index]}`;
+                content[index].style.visibility = "visible";
+
+            })
+
+        }
+    </script>
+</body>
+
+</html>

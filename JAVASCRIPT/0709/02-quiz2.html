@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="v1">
+    <input type="text" id="v2">
+    <button id="calc"></button>
+        <div id="output"></div>
+    </button>
+    <script>
+        document.getElementById("calc").addEventListener("click",function(){
+            let v1 = Number(document.querySelector("#v1").value);
+            let v2 = Number(document.querySelector("#v2").value);
+            let output = document.querySelector("#output");
+            output.innerHTML = (v1%v2)?`<h1>${v1}은 ${v2}의 배수가 아닙니다`:`<h1>${v1}은 ${v2}의 배수 입니다`;
+        });
+    </script>
+</body>
+</html>

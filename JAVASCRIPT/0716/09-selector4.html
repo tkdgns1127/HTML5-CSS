@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            const obj = [
+                {"area":"서울"},
+                {"area":"부산"},
+                {"area":"전주"}
+            ];
+            // each : 배열에 저장된 문서 객체만큼 메서드가 반복 실행,
+            //        배열에 저장된 객체의 인덱스 순서대로 하나씩 접근하여
+            //        객체를 선택하고 인덱스를 구함
+
+
+            // foreach => each
+            // $(obj).each(function(index, obj){
+            //     console.log(`${index} : ${obj.area}`)
+            // });
+            
+
+            // $.each($("#menu1 li"), function(i, o){
+            //     // console.log(`${i} : ${o.textContent}`);
+            //     console.log(`${i} : ${this.textContent}`);
+            // });
+            
+            $("#menu1 li").each(function(i,o){
+                console.log(`${i} : ${this.textContent}`);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu1">
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+    </ul>
+    <ul id="menu1">
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+    </ul>
+</body>
+</html>

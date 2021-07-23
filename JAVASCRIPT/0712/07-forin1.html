@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let foo = {
+            name : "foo",
+            age : 37,
+            major : "computer sicence"
+        }
+
+        let prop;
+
+        //for( key in value){}
+        //key값과 value값에 대해 순회하기 위해 사용
+        for( prop in foo){
+            // console.log(prop);
+            console.log(`name : ${prop}     value : ${foo[prop]} `);
+        }
+    </script>
+
+</body>
+</html>

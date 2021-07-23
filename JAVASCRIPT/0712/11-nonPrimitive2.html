@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const objA = {
+            a : 40
+        }
+
+
+        const objB = objA;
+
+        console.log(objA.a);    // 40
+        console.log(objB.a);    // 40
+      
+        obhB.j = 50;
+        console.log(objA.a);    // 50   
+        console.log(objB.a);    // 50
+
+        let objC = {value : 100};
+        let objD = {value : 100};
+   
+        console.log(objC == objD);  // false
+        console.log(objC == objD);  // false
+   </script>
+</body>
+</html>

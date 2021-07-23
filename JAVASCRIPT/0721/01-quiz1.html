@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width : 100%;
+            padding :12px;
+            border: 1px solid #ccc;
+            border-radius : 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            
+        }
+
+        input[type=submit]{
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .container{
+            background-color:#f1f1f1;
+            padding: 20px;
+        }
+
+        #message {
+            display : none;
+            background-color: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        #message p {
+            padding: 10px 35px;
+            font-size: 1.1rem;
+        }
+
+
+        .valid {
+            color: green;
+        }
+
+        .valid:before{
+            position: relative;
+            left: -35px;
+            content: "체크"
+        }
+
+        .invalid{
+            color: red;
+        }
+
+        .invalid::before{
+            position: relative;
+            left: -35px;
+            content:"✖";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="javascript:void(0)">
+            <label for="">Password</label>
+            <input type="password" name="psw" id="psw" required>
+            <button type="submit">버튼</button>
+        </form>
+    </div>
+
+    <div id="message">
+        <h3>패스워드는 다음과 같은 조건을 따라야 한다.</h3>
+        <p id="letter" class="invalid">소문자 무조건 한글자 이상</p>
+        <p id="capital" class="invalid">대문자 무조건 한글자 이상</p>
+        <p id="number" class="invalid">숫자 무조건 하나 이상</p>
+        <p id="length" class="invalid">8글자 이상</p>
+    </div>
+    <script>
+        const myInput = document.querySelector("#psw");
+        const message = document.querySelector("#message");
+        const letter = document.querySelector("#letter");
+        const capital = document.querySelector("#capital");
+        const number = document.querySelector("#number");
+        const length = document.querySelector("length");
+
+        myInput.addEventListener("focus", function(){
+            message.style.display = "block";
+        });
+
+        myInput.addEventListener("blur", function(){
+            message.style.display = "none";
+        });
+
+        myInput.addEventListener("keyup",function(){
+            const lowerCaseletter = /[a-z]/g;
+            if(myInput.value.match(lowerCaseletter)){
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+
+            }else{
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+            }
+
+            const upperCaseLetter = /[A-Z]/g;
+            if(myInput.value.match(upperCaseLetter)){
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+
+            }else{
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+
+            }
+
+
+            const numbers = /[0-9]/g;
+            if(myInput.value.match(numbers)){
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+            }else{
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+            }
+
+            if(myInput.value.length >= 8){
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+
+            }else{
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+
+            }
+
+            
+        });
+    </script>
+
+</body>
+
+
+</html>

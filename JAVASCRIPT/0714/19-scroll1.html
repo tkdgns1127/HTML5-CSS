@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+            width : 200px;
+            height : 200px;
+            background-color: coral;
+            padding : 15px;
+            border : 10px solid black;
+            margin : 10px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="myFunction()">길이측정</button>
+    <button onclick="moveScroll()">스크롤 이동</button>
+    <div id="content" onscroll="myScroll()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus facilis iste obcaecati asperiores quis nesciunt et voluptates esse quod praesentium dolore, ipsa inventore non commodi quos? Incidunt, voluptates hic.
+    </div>
+    <p id="demo"></p>
+    <p id="scrolled"></p>
+    <script>
+        // padding을 포함한 컨텐츠의 전체 크기
+        function myFunction(){
+            const el = document.getElementById("content");
+            let x = el.scrollWidth;
+            let y = el.scrollHeight;
+            document.getElementById("demo").textContent = `widht : ${x}, height : ${y}`;
+        }
+
+        function myScroll(){
+            const el = document.getElementById("content");
+            let x = el.scrollLeft;
+            let y = el.scrollTop;
+            document.getElementById("demo").textContent = `left : ${x}, top : ${y}`;
+        }
+
+        function moveScroll(){
+            const el = document.getElementById("content");
+            el.scrollTop = 900;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let item = "tennis";
+        let p1 = "윔블던"
+
+        const objA = {
+            ["one" + "two"] : 3,
+            [item] : 5,
+            [item+"_game"] : p1,
+            [item+"Method"] (){
+                console.log("tennisMethod의 기능입니다.");
+            }
+        }
+
+        console.log(objA.onetwo);
+        console.log(objA.tennis);
+        console.log(objA.tennis_game);
+        objA.tennisMethod();
+    </script>
+</body>
+</html>

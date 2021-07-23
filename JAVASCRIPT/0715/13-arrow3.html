@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let get = value => value + 10;
+        console.log(get(20));
+   
+        let get2 = () => 3 +4;
+        console.log(get2());
+
+        let get3 = val => ({sports:"축구"});
+        console.log(get3(20));
+
+
+        // arrow 함수에서는 arguments가 지원되지 않는다!!
+        let get4 = () => {
+            let args = arguments;
+            console.log(args);
+        }
+        console.log(get4());
+
+   </script>
+</body>
+</html>

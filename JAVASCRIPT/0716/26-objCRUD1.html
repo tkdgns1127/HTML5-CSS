@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // after, insertAfter => after
+            // before, insertBefore => before
+            // append, appendTo => append
+            // prepend, prependTo => prepend
+            $("#wrap div:eq(2)").after("<p>After</p>");
+            $("<p>InsertAfter</p>").insertAfter("#wrap div:eq(2)");
+
+            $("#wrap div:eq(0)").before("<p>Before</p>");
+            $("<p>InsertBefore</p>").insertBefore("#wrap div:eq(0)");
+
+            $("#wrap").append("<p>Append</p>");
+            $("<p>AppendTo</p>").appendTo("#wrap");
+
+            $("#wrap").prepend("<p>Prepend</p>");
+            $("<p>PrependTo</p>").prependTo("#wrap");
+            // empty 비운다
+            // remove 삭제
+
+            $("#wrap p:eq(0)").empty();
+            $("#wrap p:eq(1)").remove();
+
+            // clone 복사
+            const p = $("#wrap p:eq(4)").clone();
+            $("#wrap").prepend(p);
+
+            // replaceWith, replaceAll => replaceWith : 교체
+            $("#wrap div:eq(0)").replaceWith("<p>내용1바뀜</p>")
+            $("<p>내용3바뀜</p>").replaceAll("#wrap div:eq(1)");
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div>내용1</div>
+        <div>내용2</div>
+        <div>내용3</div>
+    </div>
+</body>
+</html>

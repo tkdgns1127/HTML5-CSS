@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num">
+    <button id="create">생성</button>
+    <ul id="list"></ul>
+    <script>
+        let cnt = 1;
+
+        document.querySelector("#create").addEventListener("click",function(){
+            let list =document.querySelector("#list");
+            let num = Number(document.querySelector("#num").value);
+            let li = null;
+            let text = null;
+            for( let i =0; i<num; i++){
+                li = document.createElement("li");
+                text = document.createTextNode(`텍스트 ${cnt+i}`);
+                li.append(text);
+                list.append(li);
+            }
+            cnt += num;
+        });
+    </script>
+</body>
+</html>

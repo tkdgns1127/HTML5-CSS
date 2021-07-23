@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><input type="text" id="v1"></li>
+        <li><input type="text" id="v2"></li>
+        <li><button id="btn">연산</button></li>
+    </ul>
+
+    <script>
+        document.getElementById("btn").addEventListener("click",function(){
+            let v1 = document.getElementById("v1").value;
+            let v2 = document.getElementById("v2").value;
+            alert((v1==v2)?"같다":(v1>v2)?"크다":"작다");
+        });
+    </script>
+</body>
+</html>

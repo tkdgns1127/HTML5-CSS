@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mystyle{
+
+            width: 50px;
+            height: 50px;
+            background-color: rgb(194, 103, 103);
+            color: rgb(31, 30, 30);
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        button{
+            width: 50px;
+            height: 50px;
+            background-color: #ccc;
+            color: rgb(31, 30, 30);
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="box"  onclick="boxclick(0)">1</div>
+    <button class="box" onclick="boxclick(1)">2</div>
+    <button class="box" onclick="boxclick(2)">3</div>
+    <button class="box" onclick="boxclick(3)">4</div>
+    <button class="box" onclick="boxclick(4)">5</div>
+
+     
+
+    <script>
+        let container = document.querySelectorAll(".box");
+        function boxclick(box){
+            for (let index = 0; index < container.length; index++) {
+                container[index].className -= "mystyle";
+      
+            }
+
+
+
+            
+            container[box].className += " mystyle";
+           
+
+        }
+    </script>
+</body>
+</html>

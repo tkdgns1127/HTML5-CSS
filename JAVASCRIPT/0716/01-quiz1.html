@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formId" action="https://www.naver.com" method="get">
+        ID : <input type="text" id="myInput" name="fname" pattern="[A-Za-z0-9]{6,9}" size="30"
+        placeholder="알파벳 대소문자 및 숫자 조합 6~9">
+        <div class="warning"></div>
+        <button id="btn" type="submit">submit</button>
+    </form>
+    <script>
+        document.getElementById("btn").addEventListener("click",function(e){
+            e.preventDefault();
+            e.stopPropagation(); // 이벤트 버블링
+            // logic...
+            document.getElementById("formId").submit(); 
+        },false); // 이벤트 캡쳐링
+
+        // document.getElementById("formId").addEventListener("submit",function(e){
+        //     e.preventDefault();
+        // });
+
+        document.getElementById("myInput").addEventListener("invalid",function(e){
+            document.querySelector(".warning").textContent = "반드시 알파벳 대소문자 및 숫자 조합 6~9까지";
+            document.querySelector(".warning").style.color = "red";
+        });
+    </script>
+</body>
+</html>

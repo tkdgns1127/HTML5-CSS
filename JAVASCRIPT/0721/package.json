@@ -1,0 +1,16 @@
+{
+    "name": "backend-sample",
+    "version": "0.0.0",
+    "private": true,
+    "dependencies": {
+        "axios": "*",
+        "body-parser": "*",
+        "cookie-parser": "*",
+        "cors": "*",
+        "ejs": "*",
+        "express": "*",
+        "express-session": "*",
+        "socket.io": "*",
+        "ws": "*"
+    }
+}

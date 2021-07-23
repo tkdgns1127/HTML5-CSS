@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="select1" id="select1">
+        <option value="가">가</option>
+        <option value="나">나</option>
+        <option value="다">다</option>
+    </select>
+
+    <script>
+        document.getElementById("select1").addEventListener("change",function(){
+            var sel = document.getElementById("select1");
+            for (let index = 0; index < sel.options.length; index++) {
+                console.log(sel.options[index].value);
+            }
+        });
+    </script>
+</body>
+</html>

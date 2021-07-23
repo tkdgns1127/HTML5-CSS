@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            width : 100%;
+            font-size : 1rem;
+            padding : 12px 20px;
+            border : 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myUL li a{
+            border : 1px solid #ddd;
+            margin-top : -1px;
+            background-color: #f1f1f1;
+            padding : 12px;
+            text-decoration: none;
+            font-size: 1rem;
+            color : black;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="myInput">
+
+    <ul id="myUL">
+        <li><a href="#">Adele</a></li>
+        <li><a href="#">Agnes</a></li>
+        <li><a href="#">Bill</a></li>
+        <li><a href="#">Bob</a></li>
+        <li><a href="#">Calvin</a></li>
+        <li><a href="#">Christina</a></li>
+        <li><a href="#">Cindy</a></li>
+    </ul>
+
+    <script>
+        document.getElementById("myInput").addEventListener("keyup",function(){
+            let filter = document.getElementById("myInput").value.toUpperCase();
+            const lis_a = document.querySelectorAll("#myUL li a");
+            for (const a of lis_a) {
+                let txtValue = a.textContent || a.innerText;
+                a.parentElement.style.display = 
+                    (txtValue.toUpperCase().indexOf(filter) > -1)?"":"none";
+            }
+        });
+    </script>
+</body>
+</html>
+

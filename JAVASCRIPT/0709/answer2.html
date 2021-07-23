@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-image: url("../../HTML/0628/img/apple-bg.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <button id="btn3">버튼3</button>
+    <script>
+        let box = document.querySelector("div");
+        document.querySelector("btn1").addEventListener("click",function(){
+            box.style.backgroundImage = `url("../../HTML/0628/img/bg2.jpg")`;
+        });
+        document.querySelector("btn2").addEventListener("click",function(){
+            box.style.backgroundImage = `url("../../HTML/0628/img/bg3.jpg")`;
+        });
+        document.querySelector("btn3").addEventListener("click",function(){
+            box.style.backgroundImage = `url("../../HTML/0628/img/bg4.jpg")`;
+            
+        });
+    </script>
+</body>
+</html>

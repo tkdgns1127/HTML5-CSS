@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .top-container{
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header{
+            padding: 10px;
+            background-color: #555;
+            color: #f1f1f1;
+        }
+
+        .content{
+           padding: 1rem;
+        }
+
+        .sticky{
+            position: fixed;
+            top : 0;
+            width: 100%;
+
+        }
+        .sticky+.content{
+            padding-top : 102px;
+      
+        }
+    </style>
+</head>
+<body>
+    <div class="top-container">
+        <h1>Scroll Down</h1>
+        <p>스티커 헤더 이벤트입니다.</p>
+    </div>
+
+    <div id="myHeader" class="header">
+        <h2>My Header</h2>
+    </div>
+
+    <div class="content">
+        <h3>아래로 스크롤 해 보세요</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit quasi amet placeat expedita, mollitia fugiat laborum tenetur voluptates repellat, maiores rerum magnam est distinctio dolores, cupiditate eligendi pariatur debitis!
+        </p>
+    </div>
+
+    <script>
+        const header = document.querySelector("#myHeader");
+        const sticky = header.offsetTop;
+
+        window.onscroll = function(){
+            if(window.pageYOffset > sticky){
+                header.classList.add("sticky");
+            }else{
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+</html>

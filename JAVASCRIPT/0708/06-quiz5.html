@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><input type="text" id="v1"></li>
+        <li><input type="text" id="v2"></li>
+        <li>
+            <button id="plus" onclick="getOperation('plus')">더하기</button>
+            <button id="minus" onclick="getOperation('minus')">빼기</button>
+            <button id="mul" onclick="getOperation('mul')">곱하기</button>
+            <button id="div" onclick="getOperation('div')">나누기</button>
+        </li>
+    </ul>
+    <script>
+        // document.getElementById("plus").addEventListener("click",function(){
+        //     let v1 = Number(document.getElementById("v1").value);
+        //     let v2 = Number(document.getElementById("v2").value);
+        //     alert(v1+v2);
+        // });
+        // document.getElementById("minus").addEventListener("click",function(){
+        //     let v1 = Number(document.getElementById("v1").value);
+        //     let v2 = Number(document.getElementById("v2").value);
+        //     alert(v1-v2);
+        // });
+        // document.getElementById("mul").addEventListener("click",function(){
+        //     let v1 = Number(document.getElementById("v1").value);
+        //     let v2 = Number(document.getElementById("v2").value);
+        //     alert(v1*v2);
+        // });
+        // document.getElementById("div").addEventListener("click",function(){
+        //     let v1 = Number(document.getElementById("v1").value);
+        //     let v2 = Number(document.getElementById("v2").value);
+        //     alert(v1/v2);
+        // });
+
+        function getOperation(val){
+            let v1 = Number(document.getElementById("v1").value);
+            let v2 = Number(document.getElementById("v2").value);
+            alert((val==="plus")?(v1+v2):(val==="minus")?(v1-v2):(val==="mul")?(v1*v2):(v1/v2));
+        }
+    </script>
+</body>
+</html>

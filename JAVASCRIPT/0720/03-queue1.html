@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $(".txt1").animate({marginLeft:"200px"},1000)
+            .animate({marginTop : "200px"},1000)
+            .queue(function(){
+                $(this).css({backgroundColor:"orange"});
+                $(this).dequeue();
+            })
+            .animate({marginLeft : 0}, 1000)
+            .animate({marginTop : 0}, 1000);
+
+            $("#btn1").click(function(){
+                $(".txt1").stop(true, true);
+            });
+
+            $("#btn2").click(function(){
+                $(".txt1").clearQueue();
+            });
+        });
+    </script>
+    <style>
+        .txt1{
+            width:50px;
+            height: 50px;
+            text-align: center;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">스탑</button>
+    <button id="btn2">ClearQueue</button>
+    <p class="txt1">내용1</p>
+</body>
+</html>

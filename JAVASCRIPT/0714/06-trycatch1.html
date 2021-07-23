@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let str = prompt("당신이 나눌 숫자는?");
+
+        // let result = Math.floor(1000 / str);
+
+        // document.write(`${result}`);
+        try {
+            const obj = {
+                a: 3,
+                b: "abc"
+            };
+
+            console.log(obj.c.str);
+        } catch (e) {
+            console.log("정상적인 접근이 아닙니다");
+            // 예외 이름
+            console.log("예외 이름 : " + e.name);
+            // 예외 메세지
+            console.log("예외 메세지 : " + e.message);
+            // 예외 설명
+            console.log("예외 메세지 : " + e.description);
+        }finally {
+            console.log("이것은 정상이든 아니든 무조건 실행 되는 로직");
+        }
+     
+    </script>
+</body>
+
+</html>

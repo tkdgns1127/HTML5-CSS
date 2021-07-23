@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quiz1">
+        <h3>문제1</h3>
+        <label>답1<input type="checkbox" name="q1" id="" value="1"></label><br>
+        <label>답2<input type="checkbox" name="q1" id="" value="2"></label><br>
+        <label>답3<input type="checkbox" name="q1" id="" value="4"></label><br>
+        <label>답4<input type="checkbox" name="q1" id="" value="3"></label><br>
+        <label>답5<input type="checkbox" name="q1" id="" value="5"></label><br>
+    </div>
+    <button id="result">정답</button>
+    <div id="output">
+
+    </div>
+    <script>
+        document.querySelector("#result").addEventListener("click", function(){
+            let rbs = document.querySelectorAll('input[name="q1"]');
+            let ans1 = (rbs[0].checked)?true:false;
+            let ans2 = (rbs[1].checked)?true:false;
+            let ans3 = (rbs[2].checked)?true:false;
+            let ans4 = (rbs[3].checked)?true:false;
+            let ans5 = (rbs[4].checked)?true:false;
+
+            if((!ans1) &&(!ans2) && (ans3) && (!ans4) && (ans5)){
+                document.querySelector("#output").innerHTML = `<h1>정답입니다.</h1>`;
+            }else{
+                document.querySelector("#output").innerHTML = `<h1>오답입니다.</h1>`;
+                
+            }
+            
+        });
+    </script>
+</body>
+</html>
